@@ -1,21 +1,24 @@
 {
-  "name": "backend-encuesta",
-  "version": "1.0.0",
-  "description": "App de backend  para servicio de encuesta",
-  "main": "index.js",
-  "scripts": {
-    "start": "node server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "yerson.pl@upeu.edu.pe",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "mongoose": "^4.4.5"
-  },
-  "devDependencies": {
-    "babel-core": "^6.6.5",
-    "nodemon": "^1.18.10"
-  }
+    "name": "backend-encuesta",
+    "version": "1.0.0",
+    "description": "App de backend  para servicio de encuesta",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "yerson.pl@upeu.edu.pe",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^3.0.4",
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "mongoose": "^4.4.5",
+        "mongoose-unique-validator": "^2.0.2",
+        "underscore": "^1.9.1"
+    },
+    "devDependencies": {
+        "babel-core": "^6.6.5",
+        "nodemon": "^1.18.10"
+    }
 }

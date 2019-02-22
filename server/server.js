@@ -1,41 +1,30 @@
-require ('./config/config');
+require('./config/config');
 
 const express = require('express');
+const mongoose = require('mongoose');
+
 const app = express();
 
 const bodyParser = require('body-parser')
-// body parser para aplicacion/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended: false}))
+    // body parser para aplicacion/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
 
 //parse application json
 app.use(bodyParser.json())
 
-// Peticiones Usuario
-app.get('/usuario', function(req, res){
-    res.json('get Usuario');
-});
+// Rutas de las app
 
-app.post('/usuario', function(req, res){
+app.use(require('./routes/usuario.js'))
 
-    let body = req.body;
 
-    res.json({
-        body
-    });
-});
+// Conexion a la base de datos
+mongoose.connect(process.env.URLDB, (err, res) => {
+    if (err) throw err;
+    console.log('Conexion DB exitosa')
+})
 
-app.put('/usuario/:id', function(req, res){
 
-    let id =req.params.id
-    res.json({
-        id
-    });
-});
-
-app.delete('/usuario', function(req, res){
-    res.json('delete Usuario');
-});
-
-app.listen(process.env.PORT, ()=>{
-    console.log("Escuchando peticiones", 3001);
+// Servidor de express
+app.listen(process.env.PORT, () => {
+    console.log("Escuchando peticiones", 3000);
 });
