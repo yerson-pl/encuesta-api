@@ -17,7 +17,7 @@ let urlDB;
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/db_encuesta';
 } else {
-    urlDB = 'mongodb://encuesta-user:encuesta123@ds249035.mlab.com:49035/encuesta';
+    urlDB = process.env.MONGO_URI_DB;
 }
 
 
